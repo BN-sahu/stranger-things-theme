@@ -33,7 +33,7 @@ To run this project on your local machine, follow these steps:
    cd stranger-things-theme
 
 3. **Install dependencies:**
-   ``bash
+   ```bash
    npm install
 
 4. **Start the development server:**
