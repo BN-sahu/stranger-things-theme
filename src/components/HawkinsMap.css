@@ -1,0 +1,119 @@
+.map-section {
+  min-height: 100vh;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 40px;
+  color: var(--primary-red);
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(179, 0, 0, 0.8);
+}
+
+.map-viewport {
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+  overflow: hidden;
+  border: 2px solid #222;
+  border-radius: 8px;
+  background-color: #0a0a0a;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.9);
+}
+
+.interactive-map {
+  width: 1500px; /* Larger than the viewport to allow dragging */
+  height: 1000px;
+  background: repeating-linear-gradient(
+    45deg,
+    #050505 25%,
+    #0a0a0a 25%,
+    #0a0a0a 50%,
+    #050505 50%,
+    #050505 75%,
+    #0a0a0a 75%,
+    #0a0a0a 100%
+  );
+  background-size: 40px 40px;
+  position: relative;
+  cursor: grab;
+}
+
+.map-pin {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pin-pulse {
+  width: 15px;
+  height: 15px;
+  background-color: var(--glow-red);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--glow-red);
+  animation: pulse 1.5s infinite;
+}
+
+.pin-label {
+  margin-top: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border: 1px solid var(--primary-red);
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(255, 77, 77, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+}
+
+.map-viewport {
+  width: 100%;
+  max-width: 1000px;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #050505;
+  perspective: 1000px; /* Activates 3D space for the map */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.interactive-map {
+  width: 1200px; 
+  height: 1200px;
+  /* Dark, creepy grid */
+  background: 
+    linear-gradient(rgba(179, 0, 0, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(179, 0, 0, 0.2) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-color: #0a0000;
+  cursor: grab;
+  transform-style: preserve-3d;
+  /* Tilts the map away from the camera like a floor */
+  transform: rotateX(60deg) rotateZ(-15deg);
+  box-shadow: 0 0 100px rgba(179, 0, 0, 0.5) inset;
+}
+
+.interactive-map:active {
+  cursor: grabbing;
+}
+
+.map-pin {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Counter-rotates the pins so they stand up straight on the tilted board */
+  transform: rotateZ(15deg) rotateX(-60deg) translateZ(20px);
+}

@@ -1,0 +1,19 @@
+.dust-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Ensures you can still click things underneath */
+  z-index: 9998; /* Places it just below your custom cursor */
+  overflow: hidden;
+}
+
+.dust-particle {
+  position: absolute;
+  background-color: rgba(220, 220, 220, 0.7);
+  border-radius: 50%;
+  /* Gives the particles a glowing, out-of-focus 3D look */
+  box-shadow: 0 0 6px 2px rgba(200, 200, 200, 0.4);
+  filter: blur(1.5px); 
+}

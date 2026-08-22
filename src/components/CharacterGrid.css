@@ -1,0 +1,118 @@
+.character-section {
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 50px;
+  color: var(--primary-red);
+  margin-bottom: 60px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(179, 0, 0, 0.9);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.character-card {
+  background: rgba(20, 0, 0, 0.4);
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.character-card:hover {
+  box-shadow: 0 0 25px rgba(179, 0, 0, 0.3);
+}
+
+.card-image-container {
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  background-color: #1a0000; /* Fallback color before image loads */
+  position: relative;
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.character-card h3 {
+  font-family: 'Libre Baskerville', serif;
+  color: var(--text-main);
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.character-card p {
+  color: var(--glow-red);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.character-card:hover .character-image {
+  transform: scale(1.1);
+  filter: contrast(120%) brightness(1.1);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 1000px;
+  perspective: 1200px; /* Activates 3D space */
+}
+
+.character-card {
+  background: rgba(20, 0, 0, 0.4);
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transform-style: preserve-3d; /* Allows children to pop out in 3D */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.card-image-container {
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  background-color: #1a0000;
+  transform: translateZ(40px); /* Pops the image out towards the user */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  transform: translateZ(60px); /* Pops the text out even further than the image */
+}

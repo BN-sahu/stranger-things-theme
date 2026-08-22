@@ -1,0 +1,52 @@
+/* Import fonts: Libre Baskerville for titles, Inter for body text */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* Stranger Things Theme Variables */
+  --primary-red: #b30000;
+  --glow-red: #ff4d4d;
+  --bg-dark: #050505;
+  --bg-void: #000000;
+  --text-main: #e6e6e6;
+  
+  /* Base Typography */
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Global Theme Settings */
+  color-scheme: dark;
+  color: var(--text-main);
+  background-color: var(--bg-dark);
+
+  /* Font rendering optimizations */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden; /* Crucial: Prevents horizontal scrolling issues */
+  background-color: var(--bg-dark);
+}
+
+/* Custom Selection Highlight (when users highlight text) */
+::selection {
+  background-color: var(--primary-red);
+  color: #fff;
+}
