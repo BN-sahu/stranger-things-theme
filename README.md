@@ -27,3 +27,17 @@ To run this project on your local machine, follow these steps:
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/BN-sahu/stranger-things-theme](https://github.com/BN-sahu/stranger-things-theme)
+
+   Navigate to the directory:
+
+   Bash
+   cd stranger-things-theme
+   Install dependencies:
+
+   Bash
+   npm install
+
+   Start the development server:
+
+   Bash
+   npm run dev
